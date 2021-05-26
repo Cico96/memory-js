@@ -16,6 +16,12 @@ window.addEventListener('load', function(){
     const button_start = document.createElement('button');
     container.appendChild(button_start);
     button_start.innerHTML = 'Start!'
+    button_start.setAttribute('id', 'btn-start');
+
+    button_start.addEventListener('click', () =>{
+        document.body.removeChild(welcome);
+        const memory = new Board();
+    });
 
     //description
     description.style.fontFamily = 'Roboto, sans-serif';
@@ -26,11 +32,17 @@ window.addEventListener('load', function(){
     setStyle(button_start, {
             alignSelf: 'flex-end',
             marginBottom: '50px',
-            marginLeft: '60px',
-    });
+            marginLeft: '150px',
+            width: '80px',
+            height: '40px',
+            fontFamily: 'Roboto, sans-serif',
+            fontSize: '20px',
+            border: 'none',
+            borderRadius: '3px',
+            backgroundColor: '#ccc9c6',
+            
 
-    button_start.style.alignSelf = 'flex-end';
-    button_start.style.marginBottom = '50px';
+    });
 
     container.style.height = '48vh';
     container.style.width = '60vw';
@@ -46,5 +58,5 @@ window.addEventListener('load', function(){
     welcome.style.textAlign = 'center';
     welcome.style.marginTop = '50px';
     
-    //const memory = new Board();
+    
 })
