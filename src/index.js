@@ -1,5 +1,5 @@
 import Board from './component/Board';
-import {setStyle} from '../utils'
+import {setStyle} from './utils/style'
 
 window.addEventListener('load', function(){
     const welcome = document.createElement('h1');
@@ -15,6 +15,7 @@ window.addEventListener('load', function(){
 
     const button_start = document.createElement('button');
     container.appendChild(button_start);
+    button_start.innerHTML = 'Start!'
 
     //description
     description.style.fontFamily = 'Roboto, sans-serif';
