@@ -1,5 +1,5 @@
 import Board from './component/Board';
-import {setStyle} from './utils/style'
+import {setStyle} from './utils/style';
 
 window.addEventListener('load', function(){
     const welcome = document.createElement('h1');
