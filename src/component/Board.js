@@ -1,4 +1,4 @@
-//Costruttore della Board
+import Card from './Card';
 
 function Board(){
     const el = document.createElement('div');
@@ -11,6 +11,9 @@ function Board(){
     el.style.borderRadius = '5px'
     el.style.backgroundColor = "#6b5b95";
     el.style.margin = 'auto';
+
+    const card = new Card();
+    el.appendChild(card.el_card);
 
     document.body.style.display = "flex";
     document.body.appendChild(el);
