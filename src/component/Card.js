@@ -1,22 +1,36 @@
 import {setStyle} from '../utils/style';
 
 function Card(){
-    let el_card = document.createElement('div');
-    let array_cards = [];
-    array_cards.length = 12;
+
+ /*    const array_cards = [
+        {
+            name: 'instagram',
+            img: 'image/instagram.png'
+        },
+    ]; */
+
+    let el_card = document.createElement('img');
+    el_card.setAttribute('src','src/image/instagram.png');
+    console.log(el_card.getAttribute("src")); 
     
-    if(array_cards.length >= 12){
+   /*  if(array_cards){
         console.log('entro');
         array_cards.forEach(function(index){
+            console.log('controllo');
             array_cards[index] = el_card;
-            return array_cards;
-        })
-    }
+            if(array_cards.length === 12){
+                return array_cards;
+                
+            }
+            console.info(array_cards);
+        });  
+    } */
     
     setStyle(el_card, {
-        width: '10px',
-        height: '15px',
+        width: '256px',
+        height: '256px',
         border: '2px solid black',
+        margin: 'auto',
     });
 
     this.el_card = el_card;

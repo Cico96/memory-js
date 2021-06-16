@@ -30,18 +30,16 @@ window.addEventListener('load', function(){
     //button
     //button_start.style.alignItems = 'flex-end';
     setStyle(button_start, {
-            alignSelf: 'flex-end',
-            marginBottom: '50px',
-            marginLeft: '150px',
-            width: '80px',
-            height: '40px',
-            fontFamily: 'Roboto, sans-serif',
-            fontSize: '20px',
-            border: 'none',
-            borderRadius: '3px',
-            backgroundColor: '#ccc9c6',
-            
-
+        alignSelf: 'flex-end',
+        marginBottom: '50px',
+        marginLeft: '150px',
+        width: '80px',
+        height: '40px',
+        fontFamily: 'Roboto, sans-serif',
+        fontSize: '20px',
+        border: 'none',
+        borderRadius: '3px',
+        backgroundColor: '#ccc9c6',   
     });
 
     container.style.height = '48vh';
