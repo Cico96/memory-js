@@ -2,38 +2,70 @@ import {setStyle} from '../utils/style';
 
 function Card(){
 
- /*    const array_cards = [
+    /* let el_card = document.createElement('img'); */
+
+    const array_cards = [
         {
             name: 'instagram',
-            img: 'image/instagram.png'
+            img: 'src/image/instagram.png'
         },
-    ]; */
-
-    let el_card = document.createElement('img');
-    el_card.setAttribute('src','src/image/instagram.png');
-    console.log(el_card.getAttribute("src")); 
+        {
+            name: 'facebook',
+            img: 'src/image/facebook.png'
+        },
+        {
+            name: 'snapchat',
+            img: 'src/image/snapchat.png'
+        },
+        {
+            name: 'twitch',
+            img: 'src/image/twitch.png'
+        },
+        {
+            name: 'twitter',
+            img: 'src/image/twitter.png'
+        },
+        {
+            name: 'youtube',
+            img: 'src/image/youtube.png'
+        },
+        {
+            name: 'instagram',
+            img: 'src/image/instagram.png'
+        },
+        {
+            name: 'facebook',
+            img: 'src/image/facebook.png'
+        },
+        {
+            name: 'snapchat',
+            img: 'src/image/snapchat.png'
+        },
+        {
+            name: 'twitch',
+            img: 'src/image/twitch.png'
+        },
+        {
+            name: 'twitter',
+            img: 'src/image/twitter.png'
+        },
+        {
+            name: 'youtube',
+            img: 'src/image/youtube.png'
+        }
+    ]; 
     
-   /*  if(array_cards){
-        console.log('entro');
-        array_cards.forEach(function(index){
-            console.log('controllo');
-            array_cards[index] = el_card;
-            if(array_cards.length === 12){
-                return array_cards;
-                
-            }
-            console.info(array_cards);
-        });  
-    } */
-    
-    setStyle(el_card, {
+/*      setStyle(el_card, {
         width: '256px',
         height: '256px',
         border: '2px solid black',
         margin: 'auto',
-    });
+        justifyContent: 'center',
+        alignItems: 'center'
+    }); */ 
 
-    this.el_card = el_card;
+    //this.el_card = el_card;
+    this.array_cards = array_cards;
 }
 
 export default Card;
