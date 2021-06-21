@@ -5,6 +5,7 @@ function Board(){
     const el = document.createElement('div');
     el.setAttribute('id', 'board');
     const cardChosen = [];
+    const cardChosenId = [];
 
     //settiamo i css alla board
     el.style.width = "800px";
@@ -15,6 +16,9 @@ function Board(){
     el.style.margin = 'auto';
     el.style.display = 'flex';
     el.style.flexWrap = 'wrap';
+
+    document.body.style.display = "flex";
+    document.body.appendChild(el);
 
     //Setto le carte girate nella board ed ogni carta ha un click event
     const cards = new Card();
@@ -32,13 +36,13 @@ function Board(){
         card.addEventListener('click', flipCard);
         el.appendChild(card);
     }
-    document.body.style.display = "flex";
-    document.body.appendChild(el);
+
     
     function flipCard(){
         let clicked_card = this.getAttribute('clicked_card');
         console.log(clicked_card)
         cardChosen.push(cards.array_cards[clicked_card].name);
+        cardChosenId.push(clicked_card);
         this.setAttribute('src', cards.array_cards[clicked_card].img);
           if(cardChosen.length === 2){
            setTimeout(checkMatch, 500);
@@ -46,12 +50,15 @@ function Board(){
     }
 
      function checkMatch(){
-        //const card_front = document.querySelectorAll('img');
-        let card_1 = cardChosen[0];
-        let card_2 = cardChosen[1];
+        const card_front = document.querySelectorAll('img');
+        let card_1 = cardChosenId[0];
+        let card_2 = cardChosenId[1];
         if(card_1 == card_2){
-            console.log('stessa immagine');
+           card_front[card_1].setAttribute('src', 'src/image/back.png');
+           card_front[card_2].setAttribute('src', 'src/image/back.png');
+           alert('Non puoi cliccare sulla stessa immagine');
         }
+
     } 
 }
 
