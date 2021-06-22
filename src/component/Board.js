@@ -4,8 +4,8 @@ import {setStyle} from '../utils/style';
 function Board(){
     const el = document.createElement('div');
     el.setAttribute('id', 'board');
-    const cardChosen = [];
-    const cardChosenId = [];
+    let cardChosen = [];
+    let cardChosenId = [];
 
     //settiamo i css alla board
     el.style.width = "800px";
@@ -58,7 +58,16 @@ function Board(){
            card_front[card_2].setAttribute('src', 'src/image/back.png');
            alert('Non puoi cliccare sulla stessa immagine');
         }
-
+        else if (cardChosen[0] === cardChosen[1]){
+            alert('hai trovato una carta!')
+            card_front[card_1].removeEventListener('click', flipCard);
+            card_front[card_2].removeEventListener('click', flipCard);
+        }else{
+            card_front[card_1].setAttribute('src', 'src/image/back.png');
+            card_front[card_2].setAttribute('src', 'src/image/back.png');
+        }
+        cardChosen = [];
+        cardChosenId = [];
     } 
 }
 
