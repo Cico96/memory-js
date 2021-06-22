@@ -8,7 +8,7 @@ function Board(){
     let cardChosenId = [];
 
     //settiamo i css alla board
-    el.style.width = "800px";
+    el.style.width = "1200px";
     el.style.height = "1100px";
     el.style.border = '2px solid black';
     el.style.borderRadius = '5px'
@@ -27,11 +27,11 @@ function Board(){
         card.setAttribute('src', 'src/image/back.png');
         card.setAttribute('clicked_card', i);
         setStyle(card, {
-            width: '185px',
-            height: '200px',
-            margin: 'auto',
-            justifyContent: 'center',
-            alignItems: 'center'
+            width: '20%',
+            height: '25%',
+            margin: '30px',
+            justifyContent: 'space-between',
+            //alignItems: 'center'
         });
         card.addEventListener('click', flipCard);
         el.appendChild(card);
