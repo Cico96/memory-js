@@ -2,8 +2,6 @@ import {setStyle} from '../utils/style';
 
 function Card(){
 
-    /* let el_card = document.createElement('img'); */
-
     const array_cards = [
         {
             name: 'instagram',
@@ -55,16 +53,6 @@ function Card(){
         }
     ]; 
     
-/*      setStyle(el_card, {
-        width: '256px',
-        height: '256px',
-        border: '2px solid black',
-        margin: 'auto',
-        justifyContent: 'center',
-        alignItems: 'center'
-    }); */ 
-
-    //this.el_card = el_card;
     this.array_cards = array_cards;
 }
 
