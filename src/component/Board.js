@@ -4,9 +4,6 @@ import {setStyle} from '../utils/style';
 function Board(){
     const el = document.createElement('div');
     el.setAttribute('id', 'board');
-    let cardChosen = [];
-    let cardChosenId = [];
-    let won = [];
     let interval;
 
     //settiamo i css alla board
@@ -31,10 +28,9 @@ function Board(){
         const card = document.createElement('img');
         card.setAttribute('src', 'src/image/back.png');
         card.setAttribute('clicked_card', i);
-            setStyle(card, {
+        setStyle(card, {
             width: '17%',
             height: '17%',
-            //marginLeft: '15px',
             padding: '30px',
             justifyContent: 'space-between',
         }); 
@@ -45,9 +41,11 @@ function Board(){
     //partenza timer
     startTimer();
 
+    let cardChosen = [];
+    let cardChosenId = [];
+
     function flipCard(){
         let clicked_card = this.getAttribute('clicked_card');
-        console.log(clicked_card)
         cardChosen.push(cards.array_cards[clicked_card].name);
         cardChosenId.push(clicked_card);
         this.setAttribute('src', cards.array_cards[clicked_card].img);
@@ -56,7 +54,9 @@ function Board(){
         }
     }
 
-     function checkMatch(){
+    let won = [];
+
+    function checkMatch(){
         const card_front = document.querySelectorAll('img');
         let card_1 = cardChosenId[0];
         let card_2 = cardChosenId[1];
