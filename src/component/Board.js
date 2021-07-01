@@ -4,6 +4,12 @@ import {setStyle} from '../utils/style';
 function Board(){
     const el = document.createElement('div');
     el.setAttribute('id', 'board');
+    const scoreBox = document.createElement('div');
+    setStyle(scoreBox, {
+        float: 'left',
+        marginLeft: '20px'
+    })
+    scoreBox.innerHTML = 'Punteggio: ';
     let interval;
 
     //settiamo i css alla board
@@ -38,6 +44,7 @@ function Board(){
         el.appendChild(card);
     } 
 
+    el.appendChild(scoreBox);
     //partenza timer
     startTimer();
 
@@ -55,6 +62,7 @@ function Board(){
     }
 
     let won = [];
+    let score = 0;
 
     function checkMatch(){
         const card_front = document.querySelectorAll('img');
@@ -66,7 +74,15 @@ function Board(){
            alert('Non puoi cliccare sulla stessa immagine');
         }
         else if (cardChosen[0] === cardChosen[1]){
-            alert('hai trovato una carta!')
+            score++;
+            let scoreText = document.createElement('div');
+            setStyle(scoreText, {
+                float: 'right',
+                marginLeft: '15px'
+            })
+            scoreBox.appendChild(scoreText);
+            scoreText.innerHTML = + score;
+            //alert('hai trovato una carta!')
             card_front[card_1].removeEventListener('click', flipCard);
             card_front[card_2].removeEventListener('click', flipCard);
             won.push(cardChosen);
@@ -84,6 +100,9 @@ function Board(){
     function startTimer(){
         let s = 0, m = 0, h = 0;
         let timer = document.createElement('div');
+        setStyle(timer, {
+            marginLeft: '100px'
+        })
         el.appendChild(timer);
         interval = setInterval(function(){
             timer.innerHTML = 'Tempo trascorso: ' + h + ' ore ' + m + ' minuti ' + s + ' secondi ';
