@@ -78,6 +78,11 @@ function Board() {
 
     let won = [];
     let score = 0;
+    let scoreText = document.createElement('div');
+    setStyle(scoreText, {
+        float: 'right',
+        marginLeft: '15px'
+    });
 
     function checkMatch(){
         const card_front = document.querySelectorAll('img');
@@ -90,13 +95,8 @@ function Board() {
         }
         else if (cardChosen[0] === cardChosen[1]){
             score++;
-            let scoreText = document.createElement('div');
-            setStyle(scoreText, {
-                float: 'right',
-                marginLeft: '15px'
-            })
             scoreBox.appendChild(scoreText);
-            scoreText.innerHTML = + score;
+            scoreText.innerHTML = score;
             //alert('hai trovato una carta!')
             card_front[card_1].removeEventListener('click', flipCard);
             card_front[card_2].removeEventListener('click', flipCard);
