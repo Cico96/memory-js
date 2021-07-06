@@ -6,7 +6,8 @@ function Button() {
     restart.innerHTML = 'Restart!';
     setStyle(restart, {
         alignSelf: 'flex-end',
-        marginLeft: '150px',
+        marginLeft: '250px',
+        marginBottom: '20px',
         width: '80px',
         height: '40px',
         fontFamily: 'Roboto, sans-serif',

@@ -5,17 +5,10 @@ import {setStyle} from '../utils/style';
 function Board() {
     const el = document.createElement('div');
     el.setAttribute('id', 'board');
-    const scoreBox = document.createElement('div');
-    setStyle(scoreBox, {
-        float: 'left',
-        marginLeft: '20px'
-    })
-    
-    scoreBox.innerHTML = 'Punteggio: ';
     let interval;
 
     //settiamo i css alla board
-    el.style.width = "750px";
+    el.style.width = "800px";
     el.style.height = "1000px";
     el.style.border = '2px solid black';
     el.style.borderRadius = '5px'
@@ -39,8 +32,12 @@ function Board() {
             setStyle(card, {
                 width: '17%',
                 height: '17%',
-                padding: '30px',
+                padding: '20px',
+                margin: 'auto',
                 justifyContent: 'space-between',
+                border: '1px solid black',
+                borderRadius: '5px',
+                backgroundColor: 'white'
             }); 
             card.addEventListener('click', flipCard);
             el.appendChild(card);
@@ -48,6 +45,12 @@ function Board() {
     }
 
     startGame();
+
+    const scoreBox = document.createElement('div');
+    scoreBox.innerHTML = 'Punteggio: ';
+    setStyle(scoreBox, {
+        marginLeft: '20px'
+    });
 
     el.appendChild(scoreBox);
     const button = new Button();
@@ -81,8 +84,10 @@ function Board() {
     let scoreText = document.createElement('div');
     setStyle(scoreText, {
         float: 'right',
-        marginLeft: '15px'
+        marginLeft: '20px',
     });
+    scoreBox.appendChild(scoreText);
+    scoreText.innerHTML = score;
 
     function checkMatch(){
         const card_front = document.querySelectorAll('img');
@@ -95,9 +100,6 @@ function Board() {
         }
         else if (cardChosen[0] === cardChosen[1]){
             score++;
-            scoreBox.appendChild(scoreText);
-            scoreText.innerHTML = score;
-            //alert('hai trovato una carta!')
             card_front[card_1].removeEventListener('click', flipCard);
             card_front[card_2].removeEventListener('click', flipCard);
             won.push(cardChosen);
@@ -116,7 +118,7 @@ function Board() {
         let s = 0, m = 0, h = 0;
         let timer = document.createElement('div');
         setStyle(timer, {
-            marginLeft: '100px'
+            marginLeft: '50px'
         })
         el.appendChild(timer);
         interval = setInterval(function(){
