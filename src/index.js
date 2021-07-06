@@ -27,8 +27,6 @@ window.addEventListener('load', function(){
     description.style.fontFamily = 'Roboto, sans-serif';
     description.style.fontSize = '18px' ;
 
-    //button
-    //button_start.style.alignItems = 'flex-end';
     setStyle(button_start, {
         alignSelf: 'flex-end',
         marginBottom: '50px',

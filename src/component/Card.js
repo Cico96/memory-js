@@ -1,6 +1,6 @@
 import {setStyle} from '../utils/style';
 
-function Card(){
+function Card() {
 
     const array_cards = [
         {

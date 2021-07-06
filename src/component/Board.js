@@ -1,7 +1,8 @@
 import Card from './Card';
+import Button from './Button';
 import {setStyle} from '../utils/style';
 
-function Board(){
+function Board() {
     const el = document.createElement('div');
     el.setAttribute('id', 'board');
     const scoreBox = document.createElement('div');
@@ -9,6 +10,7 @@ function Board(){
         float: 'left',
         marginLeft: '20px'
     })
+    
     scoreBox.innerHTML = 'Punteggio: ';
     let interval;
 
@@ -45,6 +47,9 @@ function Board(){
     } 
 
     el.appendChild(scoreBox);
+    const button = new Button();
+    el.appendChild(button.restart);
+
     //partenza timer
     startTimer();
 
