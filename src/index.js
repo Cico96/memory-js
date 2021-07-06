@@ -1,5 +1,5 @@
 import Board from './component/Board';
-import {setStyle} from './utils/style';
+import Button from './component/Button';
 
 window.addEventListener('load', function(){
     const welcome = document.createElement('h1');
@@ -13,12 +13,9 @@ window.addEventListener('load', function(){
     container.appendChild(description);
     description.innerHTML = 'Descrizione del gioco'
 
-    const button_start = document.createElement('button');
-    container.appendChild(button_start);
-    button_start.innerHTML = 'Start!'
-    button_start.setAttribute('id', 'btn-start');
-
-    button_start.addEventListener('click', () =>{
+    const button = new Button();
+    container.appendChild(button.start);
+    button.start.addEventListener('click', () =>{
         document.body.removeChild(welcome);
         const memory = new Board();
     });
@@ -26,19 +23,6 @@ window.addEventListener('load', function(){
     //description
     description.style.fontFamily = 'Roboto, sans-serif';
     description.style.fontSize = '18px' ;
-
-    setStyle(button_start, {
-        alignSelf: 'flex-end',
-        marginBottom: '50px',
-        marginLeft: '150px',
-        width: '80px',
-        height: '40px',
-        fontFamily: 'Roboto, sans-serif',
-        fontSize: '20px',
-        border: 'none',
-        borderRadius: '3px',
-        backgroundColor: '#ccc9c6',   
-    });
 
     container.style.height = '48vh';
     container.style.width = '60vw';
@@ -53,6 +37,5 @@ window.addEventListener('load', function(){
     welcome.style.fontSize = '25px' ;
     welcome.style.textAlign = 'center';
     welcome.style.marginTop = '50px';
-    
-    
+
 })

@@ -86,9 +86,9 @@ function Board() {
         float: 'right',
         marginLeft: '20px',
     });
-    scoreBox.appendChild(scoreText);
     scoreText.innerHTML = score;
-
+    scoreBox.appendChild(scoreText);
+ 
     function checkMatch(){
         const card_front = document.querySelectorAll('img');
         let card_1 = cardChosenId[0];
@@ -100,6 +100,9 @@ function Board() {
         }
         else if (cardChosen[0] === cardChosen[1]){
             score++;
+            console.log(score)
+            card_front[card_1].style.backgroundColor = '#d3c4f5';
+            card_front[card_2].style.backgroundColor = '#d3c4f5';
             card_front[card_1].removeEventListener('click', flipCard);
             card_front[card_2].removeEventListener('click', flipCard);
             won.push(cardChosen);
