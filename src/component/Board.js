@@ -29,26 +29,36 @@ function Board() {
 
     clearInterval(interval)
 
-    //Setto le carte girate nella board ed ogni carta ha un click event
     const cards = new Card();
-    
-    for (let i=0; i < cards.array_cards.length; i++){
-        const card = document.createElement('img');
-        card.setAttribute('src', 'src/image/back.png');
-        card.setAttribute('clicked_card', i);
-        setStyle(card, {
-            width: '17%',
-            height: '17%',
-            padding: '30px',
-            justifyContent: 'space-between',
-        }); 
-        card.addEventListener('click', flipCard);
-        el.appendChild(card);
-    } 
+
+    function startGame(){
+        for (let i=0; i < cards.array_cards.length; i++){
+            const card = document.createElement('img');
+            card.setAttribute('src', 'src/image/back.png');
+            card.setAttribute('clicked_card', i);
+            setStyle(card, {
+                width: '17%',
+                height: '17%',
+                padding: '30px',
+                justifyContent: 'space-between',
+            }); 
+            card.addEventListener('click', flipCard);
+            el.appendChild(card);
+        }
+    }
+
+    startGame();
 
     el.appendChild(scoreBox);
     const button = new Button();
+    
+    button.restart.addEventListener('click', restartGame);
     el.appendChild(button.restart);
+
+    function restartGame(){
+        document.body.removeChild(el);
+        const game = new Board();
+    }
 
     //partenza timer
     startTimer();
