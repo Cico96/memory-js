@@ -7,15 +7,16 @@ function Board() {
     el.setAttribute('id', 'board');
     let interval;
 
-    //settiamo i css alla board
-    el.style.width = "800px";
-    el.style.height = "1000px";
-    el.style.border = '2px solid black';
-    el.style.borderRadius = '5px'
-    el.style.backgroundColor = "#6b5b95";
-    el.style.margin = 'auto';
-    el.style.display = 'flex';
-    el.style.flexWrap = 'wrap';
+    setStyle(el, {
+        width: '800px',
+        height: '1000px',
+        border: '2px solid black',
+        borderRadius: '5px',
+        backgroundColor: '#6b5b95',
+        margin: 'auto',
+        display: 'flex',
+        flexWrap: 'wrap'
+    });
 
     document.body.style.display = "flex";
     document.body.appendChild(el);
@@ -100,7 +101,7 @@ function Board() {
         }
         else if (cardChosen[0] === cardChosen[1]){
             score++;
-            console.log(score)
+            scoreText.innerHTML = score;
             card_front[card_1].style.backgroundColor = '#d3c4f5';
             card_front[card_2].style.backgroundColor = '#d3c4f5';
             card_front[card_1].removeEventListener('click', flipCard);
