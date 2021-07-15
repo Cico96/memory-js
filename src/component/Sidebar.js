@@ -8,7 +8,15 @@ function SideBar(){
         borderRadius: '5px',
         backgroundColor: '#cfcacd',
         position: 'absolute'
-    })
+    });
+    let text = document.createElement('h2');
+    text.innerHTML = 'I tuoi record! ';
+    setStyle(text,{
+        fontFamily: 'Roboto, sans-serif',
+        fontSize: '18px',
+        paddingLeft: '100px'
+    });
+    sidebar.appendChild(text);
 
     this.sidebar = sidebar;
 }
