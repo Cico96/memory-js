@@ -1,5 +1,6 @@
 import Card from './Card';
 import Button from './Button';
+import Sidebar from './Sidebar';
 import {setStyle} from '../utils/style';
 
 function Board() {
@@ -24,6 +25,10 @@ function Board() {
     clearInterval(interval)
 
     const cards = new Card();
+    cards.array_cards.sort(() => 0.5 - Math.random());
+
+    const sidebar = new Sidebar();
+    document.body.appendChild(sidebar.sidebar);
 
     function startGame(){
         for (let i=0; i < cards.array_cards.length; i++){
@@ -44,13 +49,15 @@ function Board() {
             el.appendChild(card);
         }
     }
-
+    
     startGame();
 
     const scoreBox = document.createElement('div');
     scoreBox.innerHTML = 'Punteggio: ';
     setStyle(scoreBox, {
-        marginLeft: '20px'
+        marginLeft: '20px',
+        fontFamily: 'Roboto, sans-serif',
+        fontSize: '15px'
     });
 
     el.appendChild(scoreBox);
@@ -64,7 +71,6 @@ function Board() {
         const game = new Board();
     }
 
-    //partenza timer
     startTimer();
 
     let cardChosen = [];
@@ -86,6 +92,8 @@ function Board() {
     setStyle(scoreText, {
         float: 'right',
         marginLeft: '20px',
+        fontFamily: 'Roboto, sans-serif',
+        fontSize: '15px'
     });
     scoreText.innerHTML = score;
     scoreBox.appendChild(scoreText);
@@ -118,11 +126,14 @@ function Board() {
         }
     }
 
+    
     function startTimer(){
         let s = 0, m = 0, h = 0;
         let timer = document.createElement('div');
         setStyle(timer, {
-            marginLeft: '50px'
+            marginLeft: '50px',
+            fontFamily: 'Roboto, sans-serif',
+            fontSize: '15px'
         })
         el.appendChild(timer);
         interval = setInterval(function(){
