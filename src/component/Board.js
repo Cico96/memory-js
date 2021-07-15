@@ -22,10 +22,8 @@ function Board() {
     document.body.style.display = "flex";
     document.body.appendChild(el);
 
-    
-
     const cards = new Card();
-    cards.array_cards.sort(() => 0.5 - Math.random());
+    //cards.array_cards.sort(() => 0.5 - Math.random());
 
     const sidebar = new Sidebar();
     document.body.appendChild(sidebar.sidebar);
@@ -71,10 +69,10 @@ function Board() {
         const game = new Board();
     }
 
-    const timer = new GameManager();
-    timer.startTimer();
-    el.appendChild(timer.timer);
-    clearInterval(timer.interval);
+    const gm = new GameManager();
+    gm.startTimer();
+    el.appendChild(gm.timer);
+    clearInterval(gm.interval);
 
     let cardChosen = [];
     let cardChosenId = [];
@@ -126,7 +124,7 @@ function Board() {
         cardChosenId = [];
         if (won.length == 6){
             alert('Hai vinto, congratulazioni!!');
-            addRecord();
+            sidebar.addRecord(gm.timer);
         }
     }
 
