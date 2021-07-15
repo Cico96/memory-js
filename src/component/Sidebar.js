@@ -1,4 +1,5 @@
 import {setStyle} from '../utils/style';
+
 function SideBar(){
     let sidebar = document.createElement('div');
     setStyle(sidebar, {
@@ -9,6 +10,7 @@ function SideBar(){
         backgroundColor: '#cfcacd',
         position: 'absolute'
     });
+
     let text = document.createElement('h2');
     text.innerHTML = 'I tuoi record! ';
     setStyle(text,{
@@ -18,6 +20,10 @@ function SideBar(){
     });
     sidebar.appendChild(text);
 
+    let list = document.createElement('ul');
+    sidebar.appendChild(list);
+
+    this.list = list;
     this.sidebar = sidebar;
 }
 

@@ -1,12 +1,12 @@
 import Card from './Card';
 import Button from './Button';
 import Sidebar from './Sidebar';
+import GameManager from './GameManager';
 import {setStyle} from '../utils/style';
 
 function Board() {
     const el = document.createElement('div');
     el.setAttribute('id', 'board');
-    let interval;
 
     setStyle(el, {
         width: '800px',
@@ -22,7 +22,7 @@ function Board() {
     document.body.style.display = "flex";
     document.body.appendChild(el);
 
-    clearInterval(interval)
+    
 
     const cards = new Card();
     cards.array_cards.sort(() => 0.5 - Math.random());
@@ -71,7 +71,10 @@ function Board() {
         const game = new Board();
     }
 
-    startTimer();
+    const timer = new GameManager();
+    timer.startTimer();
+    el.appendChild(timer.timer);
+    clearInterval(timer.interval);
 
     let cardChosen = [];
     let cardChosenId = [];
@@ -122,33 +125,11 @@ function Board() {
         cardChosen = [];
         cardChosenId = [];
         if (won.length == 6){
-            alert('Hai vinto, congratulazioni!!')
+            alert('Hai vinto, congratulazioni!!');
+            addRecord();
         }
     }
 
-    
-    function startTimer(){
-        let s = 0, m = 0, h = 0;
-        let timer = document.createElement('div');
-        setStyle(timer, {
-            marginLeft: '50px',
-            fontFamily: 'Roboto, sans-serif',
-            fontSize: '15px'
-        })
-        el.appendChild(timer);
-        interval = setInterval(function(){
-            timer.innerHTML = 'Tempo trascorso: ' + h + ' ore ' + m + ' minuti ' + s + ' secondi ';
-            s++;
-            if (s == 60){
-                m++;
-                s = 0;
-            }
-            if(m == 60){
-                h++;
-                m = 0;
-            }
-        }, 1000);
-    }
 }
 
 export default Board;
