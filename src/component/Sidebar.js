@@ -4,11 +4,12 @@ function Sidebar(){
     let sidebar = document.createElement('div');
     setStyle(sidebar, {
         width: '350px',
-        height: '950px',
+        height: '850px',
         border: 'solid 2px black',
         borderRadius: '5px',
         backgroundColor: '#cfcacd',
-        position: 'absolute'
+        position: 'absolute',
+        marginLeft: '15px'
     });
 
     let text = document.createElement('h2');

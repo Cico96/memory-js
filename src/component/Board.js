@@ -14,7 +14,7 @@ function Board(sidebarList) {
         border: '2px solid black',
         borderRadius: '5px',
         backgroundColor: '#6b5b95',
-        margin: 'auto',
+        marginLeft: '700px',
         display: 'flex',
         flexWrap: 'wrap'
     });
