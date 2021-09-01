@@ -1,6 +1,6 @@
 import {setStyle} from '../utils/style';
 
-function SideBar(){
+function Sidebar(){
     let sidebar = document.createElement('div');
     setStyle(sidebar, {
         width: '350px',
@@ -34,4 +34,4 @@ function SideBar(){
     this.sidebar = sidebar;
 }
 
-export default SideBar;
+export default Sidebar;

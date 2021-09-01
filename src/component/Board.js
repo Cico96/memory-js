@@ -1,10 +1,10 @@
 import Card from './Card';
 import Button from './Button';
-import Sidebar from './Sidebar';
 import GameManager from './GameManager';
 import {setStyle} from '../utils/style';
+import Sidebar from './Sidebar';
 
-function Board() {
+function Board(sidebarList) {
     const el = document.createElement('div');
     el.setAttribute('id', 'board');
 
@@ -21,12 +21,11 @@ function Board() {
 
     document.body.style.display = "flex";
     document.body.appendChild(el);
+    const sidebar = sidebarList;
+    document.body.appendChild(sidebar.sidebar);
 
     const cards = new Card();
     //cards.array_cards.sort(() => 0.5 - Math.random());
-
-    const sidebar = new Sidebar();
-    document.body.appendChild(sidebar.sidebar);
 
     function startGame(){
         for (let i=0; i < cards.array_cards.length; i++){
@@ -66,7 +65,7 @@ function Board() {
 
     function restartGame(){
         document.body.removeChild(el);
-        const game = new Board();
+        const game = new Board(sidebarList);
     }
 
     const gm = new GameManager();

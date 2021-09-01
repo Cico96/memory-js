@@ -1,5 +1,6 @@
 import Board from './component/Board';
 import Button from './component/Button';
+import Sidebar from './component/Sidebar';
 
 window.addEventListener('load', function(){
     const welcome = document.createElement('h1');
@@ -14,10 +15,12 @@ window.addEventListener('load', function(){
     description.innerHTML = 'Descrizione del gioco'
 
     const button = new Button();
+    const sidebar = new Sidebar();
+
     container.appendChild(button.start);
     button.start.addEventListener('click', () =>{
         document.body.removeChild(welcome);
-        const memory = new Board();
+        const memory = new Board(sidebar);
     });
 
     //description
