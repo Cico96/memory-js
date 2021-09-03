@@ -26,9 +26,9 @@ function Sidebar(){
 
     
     this.addRecord = function addRecord(timer){
-        let p = document.createElement('div');
-        p.innerHTML = timer.innerHTML.split(':')[1];
-        list.appendChild(p);
+        let record = document.createElement('div');
+        record.innerHTML = timer.innerHTML.split(':')[1];
+        list.appendChild(record);
     }
 
     this.list = list;

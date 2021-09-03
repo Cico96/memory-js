@@ -2,7 +2,6 @@ import Card from './Card';
 import Button from './Button';
 import GameManager from './GameManager';
 import {setStyle} from '../utils/style';
-import Sidebar from './Sidebar';
 
 function Board(sidebarList) {
     const el = document.createElement('div');
@@ -27,27 +26,26 @@ function Board(sidebarList) {
     const cards = new Card();
     //cards.array_cards.sort(() => 0.5 - Math.random());
 
-    function startGame(){
-        for (let i=0; i < cards.array_cards.length; i++){
-            const card = document.createElement('img');
-            card.setAttribute('src', 'src/image/back.png');
-            card.setAttribute('clicked_card', i);
-            setStyle(card, {
-                width: '17%',
-                height: '17%',
-                padding: '20px',
-                margin: 'auto',
-                justifyContent: 'space-between',
-                border: '1px solid black',
-                borderRadius: '5px',
-                backgroundColor: 'white'
-            }); 
-            card.addEventListener('click', flipCard);
-            el.appendChild(card);
-        }
+    for (let i=0; i < cards.array_cards.length; i++){
+        const card = document.createElement('img');
+        card.setAttribute('src', 'src/image/back.png');
+        card.setAttribute('clicked_card', i);
+        setStyle(card, {
+            width: '17%',
+            height: '17%',
+            padding: '20px',
+            margin: 'auto',
+            justifyContent: 'space-between',
+            border: '1px solid black',
+            borderRadius: '5px',
+            backgroundColor: 'white'
+        });
+        card.addEventListener('click', function(){
+            setTimeout(flipCard.bind(this), 400);
+        });       
+        el.appendChild(card);
     }
     
-    startGame();
 
     const scoreBox = document.createElement('div');
     scoreBox.innerHTML = 'Punteggio: ';
@@ -82,7 +80,7 @@ function Board(sidebarList) {
         cardChosenId.push(clicked_card);
         this.setAttribute('src', cards.array_cards[clicked_card].img);
         if(cardChosen.length === 2){
-           setTimeout(checkMatch, 500);
+           setTimeout(checkMatch, 300);
         }
     }
 
