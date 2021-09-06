@@ -16,7 +16,7 @@ function Sidebar(){
     text.innerHTML = 'I tuoi record! ';
     setStyle(text,{
         fontFamily: 'Roboto, sans-serif',
-        fontSize: '18px',
+        fontSize: '16px',
         paddingLeft: '100px'
     });
     sidebar.appendChild(text);
@@ -27,6 +27,12 @@ function Sidebar(){
     
     this.addRecord = function addRecord(timer){
         let record = document.createElement('div');
+        setStyle(record,{
+            marginLeft:'120px',
+            marginTop: '20px',
+            fontFamily: 'Roboto, sans-serif',
+            fontSize: '12px'
+        })
         record.innerHTML = timer.innerHTML.split(':')[1];
         list.appendChild(record);
     }
