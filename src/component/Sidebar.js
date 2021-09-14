@@ -17,7 +17,7 @@ function Sidebar(){
     setStyle(text,{
         fontFamily: 'Roboto, sans-serif',
         fontSize: '16px',
-        paddingLeft: '100px'
+        paddingLeft: '120px'
     });
     sidebar.appendChild(text);
 
@@ -27,11 +27,24 @@ function Sidebar(){
     
     this.addRecord = function addRecord(timer){
         let record = document.createElement('div');
-        setStyle(record,{
-            marginLeft:'120px',
-            marginTop: '20px',
+        let text = document.createElement('input');
+        setStyle(text, {
+            border: 'none',
+            background: 'none',
+            display: 'inline-block',
+            marginLeft: '-20px',
             fontFamily: 'Roboto, sans-serif',
-            fontSize: '12px'
+            fontSize: '13px'
+        })
+        list.appendChild(text);
+        text.setAttribute('placeholder', 'Username');
+        text.setAttribute('size', '15');
+        setStyle(record,{
+            marginLeft:'10px',
+            marginTop: '30px',
+            fontFamily: 'Roboto, sans-serif',
+            fontSize: '13px',
+            display: 'inline-block',
         })
         record.innerHTML = timer.innerHTML.split(':')[1];
         list.appendChild(record);
