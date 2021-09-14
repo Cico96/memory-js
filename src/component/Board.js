@@ -44,8 +44,7 @@ function Board(sidebarList) {
             setTimeout(flipCard.bind(this), 400);
         });       
         el.appendChild(card);
-    }
-    
+    }  
 
     const scoreBox = document.createElement('div');
     scoreBox.innerHTML = 'Punteggio: ';
