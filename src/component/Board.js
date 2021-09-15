@@ -30,18 +30,19 @@ function Board(sidebarList) {
         const card = document.createElement('img');
         card.setAttribute('src', 'src/image/back.png');
         card.setAttribute('clicked_card', i);
+        card.classList.add('animate');
         setStyle(card, {
             width: '17%',
-            height: '17%',
-            padding: '20px',
+            height: '15%',
+            padding: '25px',
             margin: 'auto',
             justifyContent: 'space-between',
             border: '1px solid black',
             borderRadius: '5px',
-            backgroundColor: 'white'
+            backgroundColor: '#e2fdff'
         });
         card.addEventListener('click', function(){
-            setTimeout(flipCard.bind(this), 400);
+            setTimeout(flipCard.bind(this), 300);
         });       
         el.appendChild(card);
     }  
@@ -75,11 +76,21 @@ function Board(sidebarList) {
 
     function flipCard(){
         let clicked_card = this.getAttribute('clicked_card');
+        let animate_card = document.getElementsByClassName('animate');
+        animate_card[clicked_card].animate([
+            {transform: 'perspective(300px) rotate3d(0, 1, 0, 80deg)'},
+            {transform: 'perspective(300px) rotate3d(0, 1, 0, -10deg)'},
+            {transform: 'perspective(300px) '},
+        ],{
+            duration: 900,
+            easing: 'ease-in'
+
+        });
         cardChosen.push(cards.array_cards[clicked_card].name);
         cardChosenId.push(clicked_card);
         this.setAttribute('src', cards.array_cards[clicked_card].img);
         if(cardChosen.length === 2){
-           setTimeout(checkMatch, 300);
+           setTimeout(checkMatch, 1200);
         }
     }
 
@@ -107,8 +118,8 @@ function Board(sidebarList) {
         else if (cardChosen[0] === cardChosen[1]){
             score++;
             scoreText.innerHTML = score;
-            card_front[card_1].style.backgroundColor = '#d3c4f5';
-            card_front[card_2].style.backgroundColor = '#d3c4f5';
+            card_front[card_1].style.backgroundColor = '#788bff';
+            card_front[card_2].style.backgroundColor = '#788bff';
             card_front[card_1].removeEventListener('click', flipCard);
             card_front[card_2].removeEventListener('click', flipCard);
             won.push(cardChosen);
