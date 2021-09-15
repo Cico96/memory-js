@@ -1,18 +1,19 @@
 import Board from './component/Board';
 import Button from './component/Button';
 import Sidebar from './component/Sidebar';
+import { setStyle } from './utils/style';
 
 window.addEventListener('load', function(){
     const welcome = document.createElement('h1');
     document.body.appendChild(welcome);
-    welcome.innerHTML = 'Benvenuto In Memory';
+    welcome.innerHTML = 'Benvenuti in memory';
 
     const container = document.createElement('div');
     welcome.appendChild(container);
 
     const description = document.createElement('h2');
     container.appendChild(description);
-    description.innerHTML = 'Descrizione del gioco'
+    description.innerHTML = 'Scegli una carta alla volta e ricordati la faccia cosi da scoprire il doppione. Per ogni coppia di carta guadagni un punto. Divertiti migliorando il tuo punteggio come i veri arcade :)';
 
     const button = new Button();
     const sidebar = new Sidebar();
@@ -23,9 +24,12 @@ window.addEventListener('load', function(){
         const memory = new Board(sidebar);
     });
 
-    //description
-    description.style.fontFamily = 'Roboto, sans-serif';
-    description.style.fontSize = '18px' ;
+    setStyle(description,{
+        fontFamily: 'Roboto, sans-serif',
+        fontSize: '18px',
+        textAlign: 'center',
+        justifyContent: 'center'
+    })
 
     container.style.height = '48vh';
     container.style.width = '60vw';
@@ -35,10 +39,11 @@ window.addEventListener('load', function(){
     container.style.display = 'flex';
     container.style.margin = 'auto';
     container.style.marginTop = '50px';
-
-    welcome.style.fontFamily = 'Roboto, sans-serif';
-    welcome.style.fontSize = '25px' ;
-    welcome.style.textAlign = 'center';
-    welcome.style.marginTop = '50px';
+    
+    setStyle(welcome,{
+        fontFamily: 'Roboto, sans-serif',
+        fontSize: '20px',
+        textAlign: 'center'
+    });
 
 })

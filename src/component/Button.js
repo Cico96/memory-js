@@ -1,7 +1,7 @@
 import {setStyle} from '../utils/style';
 
 function Button() {
-    
+
     const restart = document.createElement('button');
     restart.innerHTML = 'Restart!';
     setStyle(restart, {

@@ -118,6 +118,18 @@ function Board(sidebarList) {
         else if (cardChosen[0] === cardChosen[1]){
             score++;
             scoreText.innerHTML = score;
+            card_front[card_1].animate([
+                {transform: 'rotate(0deg)' },
+                {transform: 'rotate(360deg)'}
+            ],{
+                duration: 1000
+            });
+            card_front[card_2].animate([
+                {transform: 'rotate(0deg)' },
+                {transform: 'rotate(360deg)'}
+            ],{
+                duration: 1000
+            });
             card_front[card_1].style.backgroundColor = '#788bff';
             card_front[card_2].style.backgroundColor = '#788bff';
             card_front[card_1].removeEventListener('click', flipCard);
