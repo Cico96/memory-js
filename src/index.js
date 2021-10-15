@@ -4,46 +4,72 @@ import Sidebar from './component/Sidebar';
 import { setStyle } from './utils/style';
 
 window.addEventListener('load', function(){
-    const welcome = document.createElement('h1');
-    document.body.appendChild(welcome);
-    welcome.innerHTML = 'Benvenuti in memory';
+    const welcomeContainerTitle = document.createElement('div');
+    document.body.appendChild(welcomeContainerTitle);
+    setStyle(document.body, {
+        fontFamily: "'Montserrat', sans-serif",
+        backgroundImage: "url('src/image/newprova3.jpg')",
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover'
+    });
 
+    const welcome = document.createElement('h1');
+    setStyle(welcome,{
+        fontSize: '22px',
+        textAlign: 'center',
+        fontWeight: 'bold'
+    });
+    welcome.innerHTML = 'Benvenuti in memory';
+    welcomeContainerTitle.appendChild(welcome);
+   
     const container = document.createElement('div');
-    welcome.appendChild(container);
+    welcomeContainerTitle.appendChild(container);
+
+    setStyle(container,{
+        height: '700px',
+        width: '950px',
+        backgroundColor: '#6b5b95',
+        border: '2px solid black',
+        borderRadius: '5px',
+        display: 'flex',
+        margin: 'auto',
+        marginTop: '50px',
+        backgroundImage: "url('src/image/prova2.jpg')",
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover'
+    });
+
+    const innerContainer = document.createElement('div');
+    setStyle(innerContainer, {
+        marginTop: '50px',
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+    });
+    container.appendChild(innerContainer);
 
     const description = document.createElement('h2');
-    container.appendChild(description);
-    description.innerHTML = 'Scegli una carta alla volta e ricordati la faccia cosi da scoprire il doppione. Per ogni coppia di carta guadagni un punto. Divertiti migliorando il tuo punteggio come i veri arcade :)';
+    setStyle(description,{
+        fontSize: '18px',
+        textAlign: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        fontWeight: 'normal'
+    })
+    innerContainer.appendChild(description);
+    description.innerHTML = 'Scegli una carta alla volta e ricordati la faccia cosi da scoprire il doppione.' +
+                            ' Per ogni coppia di carta guadagni un punto. Divertiti migliorando il tuo punteggio' +
+                            'come i veri arcade :)';
 
     const button = new Button();
     const sidebar = new Sidebar();
 
-    container.appendChild(button.start);
+    innerContainer.appendChild(button.start);
     button.start.addEventListener('click', () =>{
-        document.body.removeChild(welcome);
+        document.body.removeChild(welcomeContainerTitle);
         const memory = new Board(sidebar);
     });
 
-    setStyle(description,{
-        fontFamily: 'Roboto, sans-serif',
-        fontSize: '18px',
-        textAlign: 'center',
-        justifyContent: 'center'
-    })
-
-    container.style.height = '48vh';
-    container.style.width = '60vw';
-    container.style.backgroundColor = '#6b5b95';
-    container.style.border = '2px solid black';
-    container.style.borderRadius = '5px';
-    container.style.display = 'flex';
-    container.style.margin = 'auto';
-    container.style.marginTop = '50px';
-    
-    setStyle(welcome,{
-        fontFamily: 'Roboto, sans-serif',
-        fontSize: '20px',
-        textAlign: 'center'
-    });
-
-})
+});
