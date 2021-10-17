@@ -2,12 +2,14 @@ import {setStyle} from '../utils/style';
 import SideBar from './Sidebar';
 
 function GameManager(){
-    
+    setStyle(document.body, {
+        fontFamily: "'Montserrat', sans-serif"
+    });
+
     let timer = document.createElement('div');
     setStyle(timer, {
-        marginLeft: '50px',
-        fontFamily: 'Roboto, sans-serif',
-        fontSize: '15px'
+        fontSize: '15px',
+        fontWeight: 'bold'
     });
     let interval;
 

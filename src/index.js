@@ -8,10 +8,6 @@ window.addEventListener('load', function(){
     document.body.appendChild(welcomeContainerTitle);
     setStyle(document.body, {
         fontFamily: "'Montserrat', sans-serif",
-        backgroundImage: "url('src/image/newprova3.jpg')",
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-        backgroundSize: 'cover'
     });
 
     const welcome = document.createElement('h1');

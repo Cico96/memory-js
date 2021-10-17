@@ -56,7 +56,7 @@ function Card() {
     const array_cards_svg = [
         {
             name: 'instagram',
-            img: 'src/image/svg/instagram.svg'
+            img: 'src/image/svg/instagram1.svg'
         },
         {
             name: 'facebook',
@@ -80,7 +80,7 @@ function Card() {
         },
         {
             name: 'instagram',
-            img: 'src/image/svg/instagram.svg'
+            img: 'src/image/svg/instagram1.svg'
         },
         {
             name: 'facebook',

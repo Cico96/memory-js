@@ -1,6 +1,10 @@
 import {setStyle} from '../utils/style';
 
 function Sidebar(){
+    setStyle(document.body, {
+        fontFamily: "'Montserrat', sans-serif"
+    });
+
     let sidebar = document.createElement('div');
     setStyle(sidebar, {
         width: '350px',
@@ -15,7 +19,6 @@ function Sidebar(){
     let text = document.createElement('h2');
     text.innerHTML = 'I tuoi record! ';
     setStyle(text,{
-        fontFamily: 'Roboto, sans-serif',
         fontSize: '16px',
         paddingLeft: '120px'
     });
@@ -33,8 +36,12 @@ function Sidebar(){
             background: 'none',
             display: 'inline-block',
             marginLeft: '-20px',
-            fontFamily: 'Roboto, sans-serif',
-            fontSize: '13px'
+            fontSize: '13px',
+            borderBottom: '1px solid',
+            paddingBottom: '10px',
+            paddingLeft: '10px',
+            paddingTop: '10px',
+            fontFamily: "'Montserrat', sans-serif"
         })
         list.appendChild(text);
         text.setAttribute('placeholder', 'Username');
@@ -42,9 +49,10 @@ function Sidebar(){
         setStyle(record,{
             marginLeft:'10px',
             marginTop: '30px',
-            fontFamily: 'Roboto, sans-serif',
             fontSize: '13px',
             display: 'inline-block',
+            borderBottom: '1px solid',
+            paddingBottom: '10px'
         })
         record.innerHTML = timer.innerHTML.split(':')[1];
         list.appendChild(record);

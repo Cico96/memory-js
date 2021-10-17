@@ -1,19 +1,22 @@
 import {setStyle} from '../utils/style';
 
 function Button() {
+    setStyle(document.body, {
+        fontFamily: "'Montserrat', sans-serif"
+    });
 
     const restart = document.createElement('button');
     restart.innerHTML = 'Restart!';
     setStyle(restart, {
-        alignSelf: 'flex-end',
-        marginLeft: '250px',
-        marginBottom: '20px',
-        width: '80px',
-        height: '40px',
-        fontSize: '20px',
+        marginLeft: '100px',
+        marginRight: '50px',
+        width: '100px',
+        height: '35px',
+        fontSize: '18px',
+        fontWeight: 'bold',
         border: 'none',
-        borderRadius: '3px',
-        backgroundColor: '#ccc9c6',   
+        borderRadius: '5px',
+        backgroundColor: '#Eaeae7',
     });
 
     const start = document.createElement('button');
@@ -21,7 +24,7 @@ function Button() {
     setStyle(start, {
         width: '100px',
         height: '35px',
-        fontSize: '20px',
+        fontSize: '18px',
         fontWeight: 'bold',
         border: 'none',
         borderRadius: '5px',
