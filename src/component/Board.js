@@ -29,7 +29,7 @@ function Board(sidebarList) {
     document.body.appendChild(sidebar.sidebar);
 
     const cards = new Card();
-    //cards.array_cards.sort(() => 0.5 - Math.random());
+    cards.array_cards.sort(() => 0.5 - Math.random());
 
     for (let i=0; i < cards.array_cards.length; i++){
         const card = document.createElement('img');
