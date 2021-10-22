@@ -45,7 +45,7 @@ function Board(sidebarList) {
             backgroundColor: '#e2fdff'
         });
         card.addEventListener('click', function(){
-            setTimeout(flipCard.bind(this), 300);
+            setTimeout(flipCard.bind(this), 700);
         });       
         el.appendChild(card);
     }
@@ -92,7 +92,7 @@ function Board(sidebarList) {
             {transform: 'perspective(300px) rotate3d(0, 1, 0, -10deg)'},
             {transform: 'perspective(300px) '},
         ],{
-            duration: 900,
+            duration: 700,
             easing: 'ease-in'
 
         });
@@ -100,7 +100,7 @@ function Board(sidebarList) {
         cardChosenId.push(clicked_card);
         this.setAttribute('src', cards.array_cards_svg[clicked_card].img);
         if(cardChosen.length === 2){
-           setTimeout(checkMatch, 1200);
+           setTimeout(checkMatch, 500);
         }
     }
 
@@ -131,13 +131,13 @@ function Board(sidebarList) {
                 {transform: 'rotate(0deg)' },
                 {transform: 'rotate(360deg)'}
             ],{
-                duration: 1000
+                duration: 700
             });
             card_front[card_2].animate([
                 {transform: 'rotate(0deg)' },
                 {transform: 'rotate(360deg)'}
             ],{
-                duration: 1000
+                duration: 700
             });
             card_front[card_1].style.backgroundColor = '#3eaede';
             card_front[card_2].style.backgroundColor = '#3eaede';
