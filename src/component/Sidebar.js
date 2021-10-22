@@ -16,13 +16,13 @@ function Sidebar(){
         marginLeft: '15px'
     });
 
-    let text = document.createElement('h2');
-    text.innerHTML = 'I tuoi record! ';
-    setStyle(text,{
+    let sidebarTitle = document.createElement('h2');
+    sidebarTitle.innerHTML = 'I tuoi record! ';
+    setStyle(sidebarTitle,{
         fontSize: '16px',
         paddingLeft: '120px'
     });
-    sidebar.appendChild(text);
+    sidebar.appendChild(sidebarTitle);
 
     let list = document.createElement('ul');
     sidebar.appendChild(list);

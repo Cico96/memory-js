@@ -29,9 +29,9 @@ function Board(sidebarList) {
     document.body.appendChild(sidebar.sidebar);
 
     const cards = new Card();
-    cards.array_cards.sort(() => 0.5 - Math.random());
+    cards.array_cards_svg.sort(() => 0.5 - Math.random());
 
-    for (let i=0; i < cards.array_cards.length; i++){
+    for (let i=0; i < cards.array_cards_svg.length; i++){
         const card = document.createElement('img');
         card.setAttribute('src', 'src/image/back.png');
         card.setAttribute('clicked_card', i);

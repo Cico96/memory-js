@@ -1,5 +1,4 @@
 import {setStyle} from '../utils/style';
-import SideBar from './Sidebar';
 
 function GameManager(){
     setStyle(document.body, {

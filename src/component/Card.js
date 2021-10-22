@@ -12,7 +12,7 @@ function Card() {
             img: 'src/image/svg/facebook.svg'
         },
         {
-            name: 'snapchat',
+            name: 'tiktok',
             img: 'src/image/svg/tiktok.svg'
         },
         {
@@ -36,7 +36,7 @@ function Card() {
             img: 'src/image/svg/facebook.svg'
         },
         {
-            name: 'snapchat',
+            name: 'tiktok',
             img: 'src/image/svg/tiktok.svg'
         },
         {
